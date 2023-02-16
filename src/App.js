@@ -1,7 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header/Header';
+import { Route, Routes } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useTelegram } from './hooks/useTelegram';
+import Form from './components/Form/Form';
+import Form2 from './components/Form2/Form2';
 
 
 function App() {
@@ -13,9 +16,12 @@ function App() {
 
   return (
     <div className="App">
-      work
-     
-     <button onClick={onToggleButton}>ToggleButton</button>
+      <Header />
+      <Routes>
+        <Route index element={<Form />}/>
+        <Route path={'form2'} element={<Form2 />}/>
+      </Routes>
+
     </div>
   );
 }
