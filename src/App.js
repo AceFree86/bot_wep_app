@@ -16,12 +16,14 @@ function App() {
 
   return (
     <div className="App">
-     
-      <Routes>
-        <Route index element={<Form />}/>
-        <Route path={'form2'} element={<Form2 />}/>
-      </Routes>
-
+    
+    <h1>Титулка</h1>
+   
+        <Routes>
+          <Route path='/' element={<Form />}/>
+          <Route path='/form2' element={<Form2 />}/>
+        </Routes>
+    
     </div>
   );
 }
