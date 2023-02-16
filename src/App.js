@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { useEffect } from 'react';
-import { useTelegram} from "../../hooks/useTelegram";
+import { useTelegram } from './hooks/useTelegram';
 
 
 function App() {
@@ -10,7 +10,6 @@ function App() {
   useEffect(() => {
     tg.ready();
   }, [])
-
 
   return (
     <div className="App">
