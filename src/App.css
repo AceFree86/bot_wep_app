@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background: var(--tg-theme-bg-color);
+  color: var(--tg-theme-text-color);
 }
 
 body {
