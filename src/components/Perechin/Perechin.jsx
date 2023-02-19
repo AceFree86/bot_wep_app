@@ -47,21 +47,23 @@ const Perechin = () => {
 
            <input className={'input'} type="text" placeholder={'Страна'} value={country} onChange={onChangeCountry}/>
 
-            <Form.Group className={'select'}>
+            <Form.Group controlId="formBasicSelect">
+            <Form.Label></Form.Label>
+            <Form.Label></Form.Label>
+                <Form.Control type="date" name="dob" placeholder="Date of Birth" className={'select'}/>
                 <Form.Label></Form.Label>
+                <Form.Control as="select" value={court} onChange={onChangeCourt} className={'select'}>
+                    <option value="Склад суду">Склад суду</option>
+                    <option value="Ганько І.І.">Ганько І.І.</option>
+                    <option value="Гевці В.М.">Гевці В.М.</option>
+                    <option value="Чепурнов В.О.">Чепурнов В.О.</option>
+                </Form.Control>
                 <Form.Label></Form.Label>
-                    <Form.Control type="date" name="dob" placeholder="Date of Birth" />
-                    <Form.Control as="select" value={court} onChange={onChangeCourt}>
-                        <option value="Склад суду">Склад суду</option>
-                        <option value="Ганько І.І.">Ганько І.І.</option>
-                        <option value="Гевці В.М.">Гевці В.М.</option>
-                        <option value="Чепурнов В.О.">Чепурнов В.О.</option>
-                    </Form.Control>
-                    <Form.Control as="select" value={formset} onChange={onChangeFormset}>
-                        <option value="Форма судочинства">Форма судочинства</option>
-                        <option value="Адміністративні правопорушення">Адміністративні правопорушення</option>
-                        <option value="Кримінальне судочинство">Кримінальне судочинство</option>
-                        <option value="Цивільне судочинство">Цивільне судочинство</option>
+                <Form.Control as="select" value={formset} onChange={onChangeFormset} className={'select'}>
+                    <option value="Форма судочинства">Форма судочинства</option>
+                    <option value="Адміністративні правопорушення">Адміністративні правопорушення</option>
+                    <option value="Кримінальне судочинство">Кримінальне судочинство</option>
+                    <option value="Цивільне судочинство">Цивільне судочинство</option>
                 </Form.Control>
             </Form.Group>
         </div>
