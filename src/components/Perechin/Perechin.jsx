@@ -30,15 +30,6 @@ const Perechin = () => {
     }, [])
 
 
-    useEffect(() => {
-        if(!formset || !country) {
-            tg.MainButton.hide();
-        } else {
-            tg.MainButton.show();
-        }
-    }, [country, formset])
-
-
     const onChangeCountry = (e) => {
         setCountry(e.target.value)
     }
@@ -59,12 +50,10 @@ const Perechin = () => {
 
            <input className={'input'} type="text" placeholder={'Страна'} value={country} onChange={onChangeCountry}/>
 
-            <Form.Group controlId="dob">
-                <Form.Label></Form.Label>
-                <Form.Control type="date" name="dob" placeholder="Date of Birth" />
-            </Form.Group>
             <Form.Group controlId="formBasicSelect">
             <Form.Label></Form.Label>
+            <Form.Label></Form.Label>
+                <Form.Control type="date" name="dob" placeholder="Date of Birth" />
                 <Form.Control as="select" value={court} onChange={onChangeCourt} className={'select'}>
                     <option value="Склад суду">Склад суду</option>
                     <option value="Ганько І.І.">Ганько І.І.</option>
