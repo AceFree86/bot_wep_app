@@ -17,16 +17,13 @@ const Perechin = () => {
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
-        return () => {
-            tg.offEvent('mainButtonClicked', onSendData)
-        }
+        return () => {tg.offEvent('mainButtonClicked', onSendData)}
     }, [onSendData])
 
 
     useEffect(() => {
-        tg.MainButton.setParams({
-            text: 'Отправить данные'
-        })
+        tg.MainButton.setParams({text: 'Отправить данные'})
+        tg.MainButton.show();
     }, [])
 
 
