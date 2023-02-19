@@ -50,7 +50,7 @@ const Perechin = () => {
             <Form.Group controlId="formBasicSelect">
             <Form.Label></Form.Label>
             <Form.Label></Form.Label>
-                <Form.Control type="date" name="dob" placeholder="Date of Birth" className={'select'}/>
+                <Form.Control type="date" name="dob" placeholder="Date of Birth" />
                 <Form.Label></Form.Label>
                 <Form.Control as="select" value={court} onChange={onChangeCourt} className={'select'}>
                     <option value="Склад суду">Склад суду</option>
