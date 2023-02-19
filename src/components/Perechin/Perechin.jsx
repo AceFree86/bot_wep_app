@@ -47,10 +47,10 @@ const Perechin = () => {
 
            <input className={'input'} type="text" placeholder={'Страна'} value={country} onChange={onChangeCountry}/>
 
-            <Form.Group controlId="formBasicSelect">
+           
             <Form.Label></Form.Label>
             <Form.Label></Form.Label>
-                <Form.Control type="date" name="dob" placeholder="Date of Birth" />
+                <Form.Control type="date" name="dob" placeholder="Date of Birth" className={'select'}/>
                 <Form.Label></Form.Label>
                 <Form.Control as="select" value={court} onChange={onChangeCourt} className={'select'}>
                     <option value="Склад суду">Склад суду</option>
@@ -65,7 +65,7 @@ const Perechin = () => {
                     <option value="Кримінальне судочинство">Кримінальне судочинство</option>
                     <option value="Цивільне судочинство">Цивільне судочинство</option>
                 </Form.Control>
-            </Form.Group>
+          
         </div>
     );
 };
