@@ -12,3 +12,7 @@
     padding: 10px;
     margin-top: 27px;
 }
+
+h6 {
+    color: var(--tg-theme-hint-color); 
+}

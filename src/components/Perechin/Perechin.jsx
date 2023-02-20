@@ -47,6 +47,7 @@ const Perechin = () => {
     return (
         <div className={"form"}>
             <h3>Фільтри пошуку</h3>
+            <h6>Перечинський районний суд</h6>
                 <Form.Control size="lg" as="select" value={court} onChange={onChangeCourt} className={'selectF'}>
                     <option value="Склад суду">Склад суду</option>
                     <option value="Ганько І.І.">Ганько І.І.</option>
