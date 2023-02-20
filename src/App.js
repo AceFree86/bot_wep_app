@@ -16,14 +16,10 @@ function App() {
 
   return (
     <div className="App">
-    
-    <h1>Титулка</h1>
-   
         <Routes>
           <Route path='/' element={<Perechin />}/>
           <Route path='/form2' element={<Form2 />}/>
         </Routes>
-    
     </div>
   );
 }

@@ -5,8 +5,7 @@ import { useTelegram } from "../../hooks/useTelegram";
 import { Form } from "react-bootstrap";
 
 const Perechin = () => {
-    const [dob, setDob] = useState(moment().format('DD.MM.YYYY'));
-    const [country, setCountry] = useState('');
+    const [dob, setDob] = useState(new Date().toISOString().substr(0, 10));
     const [formset, setFormset] = useState('');
     const [court, setCourt] = useState('');
     const {tg} = useTelegram();
