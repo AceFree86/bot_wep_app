@@ -66,13 +66,9 @@ const Perechin = () => {
                 </Form.Control>
                 <br />
                 <br />
-                <Form.Control size="lg" type="date"
-                onChange={setDate} value={date} formatLongDate={(locale, date) => dayjs(date).format('DD.MM.YYYY')}/>
+                <Form.Control size="lg" type="date" />
                 <br />
-                <p className='text-center'>
-                    <span className='bold'>Вибрано :</span>{' '}
-                    {dayjs(date).format('DD.MM.YYYY')}{' рік'}
-                </p>
+                
             </>    
                
           
