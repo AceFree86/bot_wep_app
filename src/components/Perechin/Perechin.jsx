@@ -46,7 +46,7 @@ const Perechin = () => {
 
     return (
         <div className={"form"}>
-            <h3>Введите ваши данные</h3>
+            <h3>Фільтри пошуку</h3>
                 <Form.Control size="lg" as="select" value={court} onChange={onChangeCourt} className={'select'}>
                     <option value="Склад суду">Склад суду</option>
                     <option value="Ганько І.І.">Ганько І.І.</option>
