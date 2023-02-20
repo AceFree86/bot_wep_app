@@ -5,15 +5,16 @@ import { useTelegram } from "../../hooks/useTelegram";
 import { Form } from "react-bootstrap";
 
 const Perechin = () => {
-    const [dob, setDob] = useState(new Date().toISOString().substr(0, 10));
+
+    const [date, setDob] = useState(moment().format('YYYY-MM-DD'));
     const [formset, setFormset] = useState('');
     const [court, setCourt] = useState('');
     const {tg} = useTelegram();
 
     const onSendData = useCallback(() => {
-        const data = { dob, formset, court }
+        const data = { date, formset, court }
         tg.sendData(JSON.stringify(data));
-    }, [dob, formset, court])
+    }, [date, formset, court])
 
 
     useEffect(() => {
@@ -29,7 +30,9 @@ const Perechin = () => {
 
 
     const onChangeDate = (e) => {
-        setDob(e.target.value)
+        const newDate = moment(e.target.value.timeStamp).format('dd.MM.yyyy');
+        setDob(newDate)
+        console.log(newDate);
     }
 
 
@@ -62,7 +65,7 @@ const Perechin = () => {
                 </Form.Control>
                 <br />
                 <br />
-                <Form.Control size="lg" type="date" name="dob" placeholder="Date of Birth" value={dob} onChange={onChangeDate} />
+                <Form.Control size="lg" type="date" value={date} name="dob" onChange={onChangeDate} />
                 <br />
                 
             </>    
