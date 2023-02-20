@@ -5,7 +5,7 @@ import { useTelegram } from "../../hooks/useTelegram";
 import { Form } from "react-bootstrap";
 
 const Perechin = () => {
-    const [date, setDate] = useState(new Date());
+    const [dob, setDob] = useState(new Date().toISOString().substr(0, 10));
     const [country, setCountry] = useState('');
     const [formset, setFormset] = useState('physical');
     const [court, setCourt] = useState('physical');
@@ -66,7 +66,7 @@ const Perechin = () => {
                 </Form.Control>
                 <br />
                 <br />
-                <Form.Control size="lg" type="date" />
+                <Form.Control type="date" name="dob" placeholder="Date of Birth" value={dob} onChange={(e) => setDob(e.target.value)} />
                 <br />
                 
             </>    
