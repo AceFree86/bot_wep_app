@@ -66,7 +66,7 @@ const Perechin = () => {
                 </Form.Control>
                 <br />
                 <br />
-                <Form.Control type="date" name="dob" placeholder="Date of Birth" value={dob} onChange={(e) => setDob(e.target.value)} />
+                <Form.Control size="lg" type="date" name="dob" placeholder="Date of Birth" value={dob} onChange={(e) => setDob(e.target.value)} />
                 <br />
                 
             </>    
