@@ -1,7 +1,5 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import './Perechin.css';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
 import dayjs from 'dayjs';
 import { useTelegram } from "../../hooks/useTelegram";
 import { Form } from "react-bootstrap";
@@ -26,7 +24,7 @@ const Perechin = () => {
 
 
     useEffect(() => {
-        tg.MainButton.setParams({text: 'Отправить данные'})
+        tg.MainButton.setParams({text: 'Пошук'})
         tg.MainButton.show();
     }, [])
 
@@ -51,29 +49,31 @@ const Perechin = () => {
 
            <input className={'input'} type="text" placeholder={'Страна'} value={country} onChange={onChangeCountry}/>
 
-           
-            <Form.Label></Form.Label>
-            <Form.Label></Form.Label>
-                <Form.Label></Form.Label>
-                <Form.Control as="select" value={court} onChange={onChangeCourt} className={'select'}>
+            <>
+                <br />
+                <Form.Control size="lg" as="select" value={court} onChange={onChangeCourt} className={'select'}>
                     <option value="Склад суду">Склад суду</option>
                     <option value="Ганько І.І.">Ганько І.І.</option>
                     <option value="Гевці В.М.">Гевці В.М.</option>
                     <option value="Чепурнов В.О.">Чепурнов В.О.</option>
                 </Form.Control>
-                <Form.Label></Form.Label>
-                <Form.Control as="select" value={formset} onChange={onChangeFormset} className={'select'}>
+                <br />
+                <Form.Control size="lg" as="select" value={formset} onChange={onChangeFormset} className={'select'}>
                     <option value="Форма судочинства">Форма судочинства</option>
                     <option value="Адміністративні правопорушення">Адміністративні правопорушення</option>
                     <option value="Кримінальне судочинство">Кримінальне судочинство</option>
                     <option value="Цивільне судочинство">Цивільне судочинство</option>
                 </Form.Control>
-                <Form.Label></Form.Label>
-                <Calendar onChange={setDate} value={date} formatLongDate={(locale, date) => dayjs(date).format('DD.MM.YYYY')}/>
+                <br />
+                <br />
+                <Form.Control size="lg" type="date"
+                onChange={setDate} value={date} formatLongDate={(locale, date) => dayjs(date).format('DD.MM.YYYY')}/>
+                <br />
                 <p className='text-center'>
                     <span className='bold'>Вибрано :</span>{' '}
                     {dayjs(date).format('DD.MM.YYYY')}{' рік'}
                 </p>
+            </>    
                
           
         </div>
