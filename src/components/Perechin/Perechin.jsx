@@ -47,23 +47,21 @@ const Perechin = () => {
     return (
         <div className={"form"}>
             <h3>Фільтри пошуку</h3>
-                <Form.Control size="lg" as="select" value={court} onChange={onChangeCourt} className={'select'}>
+                <Form.Control size="lg" as="select" value={court} onChange={onChangeCourt} className={'selectF'}>
                     <option value="Склад суду">Склад суду</option>
                     <option value="Ганько І.І.">Ганько І.І.</option>
                     <option value="Гевці В.М.">Гевці В.М.</option>
                     <option value="Чепурнов В.О.">Чепурнов В.О.</option>
                 </Form.Control>
                 <br />
-                <Form.Control size="lg" as="select" value={formset} onChange={onChangeFormset} className={'select'}>
+                <Form.Control size="lg" as="select" value={formset} onChange={onChangeFormset} className={'selectF'}>
                     <option value="Форма судочинства">Форма судочинства</option>
                     <option value="Адміністративні правопорушення">Адміністративні правопорушення</option>
                     <option value="Кримінальне судочинство">Кримінальне судочинство</option>
                     <option value="Цивільне судочинство">Цивільне судочинство</option>
                 </Form.Control>
                 <br />
-                <br />
-                <Form.Control size="lg" type="date" value={date} name="dob" onChange={onChangeDate} />
-                <br />
+                <Form.Control size="lg" type="date" value={date} name="dob" onChange={onChangeDate} className={'selectF'} />
         </div>
     );
 };
