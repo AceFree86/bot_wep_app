@@ -12,9 +12,9 @@ const Perechin = () => {
     const {tg} = useTelegram();
 
     const onSendData = useCallback(() => {
-        const data = { country, formset, court }
+        const data = { dob, formset, court }
         tg.sendData(JSON.stringify(data));
-    }, [country, formset, court])
+    }, [dob, formset, court])
 
 
     useEffect(() => {
