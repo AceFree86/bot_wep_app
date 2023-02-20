@@ -1,9 +1,13 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import './Perechin.css';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import dayjs from 'dayjs';
 import { useTelegram } from "../../hooks/useTelegram";
 import { Form } from "react-bootstrap";
 
 const Perechin = () => {
+    const [date, setDate] = useState(new Date());
     const [country, setCountry] = useState('');
     const [formset, setFormset] = useState('physical');
     const [court, setCourt] = useState('physical');
@@ -50,7 +54,6 @@ const Perechin = () => {
            
             <Form.Label></Form.Label>
             <Form.Label></Form.Label>
-                <Form.Control type="date" name="dob" placeholder="Date of Birth" className={'select'}/>
                 <Form.Label></Form.Label>
                 <Form.Control as="select" value={court} onChange={onChangeCourt} className={'select'}>
                     <option value="Склад суду">Склад суду</option>
@@ -65,6 +68,13 @@ const Perechin = () => {
                     <option value="Кримінальне судочинство">Кримінальне судочинство</option>
                     <option value="Цивільне судочинство">Цивільне судочинство</option>
                 </Form.Control>
+                <Form.Label></Form.Label>
+                <Calendar onChange={setDate} value={date} formatLongDate={(locale, date) => dayjs(date).format('DD.MM.YYYY')}/>
+                <p className='text-center'>
+                    <span className='bold'>Вибрано :</span>{' '}
+                    {dayjs(date).format('DD.MM.YYYY')}{' рік'}
+                </p>
+               
           
         </div>
     );
