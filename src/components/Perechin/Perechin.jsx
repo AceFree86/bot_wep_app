@@ -6,7 +6,7 @@ import { Form } from "react-bootstrap";
 
 const Perechin = () => {
 
-    const [date, setDob] = useState(moment().format('dd.MM.yyyy'));
+    const [date, setDob] = useState(moment().format('YYYY-MM-DD'));
     const [formset, setFormset] = useState('');
     const [court, setCourt] = useState('');
     const {tg} = useTelegram();
@@ -30,9 +30,8 @@ const Perechin = () => {
 
 
     const onChangeDate = (e) => {
-        const newDate = moment(e.target.value.timeStamp).format('dd.MM.yyyy');
+        const newDate = moment(e.target.value.timeStamp).format('YYYY-MM-DD');
         setDob(newDate)
-        console.log(newDate);
     }
 
 
