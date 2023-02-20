@@ -1,14 +1,14 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import './Perechin.css';
-import dayjs from 'dayjs';
+import moment from 'moment';
 import { useTelegram } from "../../hooks/useTelegram";
 import { Form } from "react-bootstrap";
 
 const Perechin = () => {
-    const [dob, setDob] = useState(new Date().toISOString().substr(0, 10));
+    const [dob, setDob] = useState(moment().format('DD.MM.YYYY'));
     const [country, setCountry] = useState('');
-    const [formset, setFormset] = useState('physical');
-    const [court, setCourt] = useState('physical');
+    const [formset, setFormset] = useState('');
+    const [court, setCourt] = useState('');
     const {tg} = useTelegram();
 
     const onSendData = useCallback(() => {
@@ -29,8 +29,8 @@ const Perechin = () => {
     }, [])
 
 
-    const onChangeCountry = (e) => {
-        setCountry(e.target.value)
+    const onChangeDate = (e) => {
+        setDob(e.target.value)
     }
 
 
@@ -46,9 +46,6 @@ const Perechin = () => {
     return (
         <div className={"form"}>
             <h3>Введите ваши данные</h3>
-
-           <input className={'input'} type="text" placeholder={'Страна'} value={country} onChange={onChangeCountry}/>
-
             <>
                 <br />
                 <Form.Control size="lg" as="select" value={court} onChange={onChangeCourt} className={'select'}>
@@ -66,7 +63,7 @@ const Perechin = () => {
                 </Form.Control>
                 <br />
                 <br />
-                <Form.Control size="lg" type="date" name="dob" placeholder="Date of Birth" value={dob} onChange={(e) => setDob(e.target.value)} />
+                <Form.Control size="lg" type="date" name="dob" placeholder="Date of Birth" value={dob} onChange={onChangeDate} />
                 <br />
                 
             </>    
