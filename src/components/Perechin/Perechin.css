@@ -8,13 +8,7 @@
     color: var(--tg-theme-text-color);
 }
 
-.input {
-    width: 100%;
+.selectF {
     padding: 10px;
-    margin-top: 15px;
-}
-
-.select {
-    padding: 10px;
-    margin-top: 15px;
+    margin-top: 27px;
 }
