@@ -5,8 +5,6 @@ import { useTelegram } from "../../hooks/useTelegram";
 import { Form } from "react-bootstrap";
 
 const Perechin = () => {
-    const today = new Date().toISOString().substr(0, 10);
-
     const [dob, setDob] = useState(new Date().toISOString().slice(0, 10));
     const [formset, setFormset] = useState('');
     const [court, setCourt] = useState('');
@@ -28,12 +26,6 @@ const Perechin = () => {
         tg.MainButton.setParams({text: 'Пошук'})
         tg.MainButton.show();
     }, [])
-
-
-    const onChangeDate = (e) => {
-        const newDate = moment(e.target.value.timeStamp).format('YYYY-MM-DD');
-        setob(date)
-    }
 
 
     const onChangeFormset = (e) => {
@@ -63,8 +55,8 @@ const Perechin = () => {
                     <option value="Цивільне судочинство">Цивільне судочинство</option>
                 </Form.Control>
                 <br />
-                <Form.Control type="date" name="dob" placeholder="Due date" value={dob} onChange={(e) => setDob(e.target.value)}
-                defaultValue={today} />
+                <Form.Control size="lg" type="date" name="dob" placeholder="Due date" value={dob}
+                 onChange={(e) => setDob(e.target.value)} className={'selectF'} />
         </div>
     );
 };
