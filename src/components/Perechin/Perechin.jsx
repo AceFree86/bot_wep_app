@@ -1,6 +1,5 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import './Perechin.css';
-import moment from 'moment';
 import { useTelegram } from "../../hooks/useTelegram";
 import { Form } from "react-bootstrap";
 
