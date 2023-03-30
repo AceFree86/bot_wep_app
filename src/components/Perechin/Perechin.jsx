@@ -14,44 +14,55 @@ const Perechin = () => {
         tg.sendData(JSON.stringify(data));
     }, [dob, formset, court])
 
-
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
         return () => {tg.offEvent('mainButtonClicked', onSendData)}
     }, [onSendData])
-
 
     useEffect(() => {
         tg.MainButton.setParams({text: 'Пошук'})
         tg.MainButton.show();
     }, [])
 
-
     const onChangeFormset = (e) => {
         setFormset(e.target.value)
     }
-
 
     const onChangeCourt = (e) => {
         setCourt(e.target.value)
     }
 
+    const options = [
+        { value: 'Форма судочинства', label: 'Форма судочинства' },
+        { value: 'Адміністративні правопорушення', label: 'Адміністративні правопорушення' },
+        { value: 'Кримінальне судочинство', label: 'Кримінальне судочинство' },
+        { value: 'Цивільне судочинство', label: 'Цивільне судочинство' },
+      ];
+
+    const judges = [
+        { value: 'Склад суду', label: 'Склад суду' },
+        { value: 'Ганько І.І.', label: 'Ганько І.І.' },
+        { value: 'Гевці В.М.', label: 'Гевці В.М.' },
+        { value: 'Чепурнов В.О.', label: 'Чепурнов В.О.' },
+      ];  
+
     return (
         <div className={"form"}>
-            <h3>Фільтри пошуку</h3>
             <h6>Перечинський районний суд</h6>
                 <Form.Control size="lg" as="select" value={court} onChange={onChangeCourt} className={'selectF'}>
-                    <option value="Склад суду">Склад суду</option>
-                    <option value="Ганько І.І.">Ганько І.І.</option>
-                    <option value="Гевці В.М.">Гевці В.М.</option>
-                    <option value="Чепурнов В.О.">Чепурнов В.О.</option>
+                    {judges.map((judge) => (
+                    <option key={judge.value} value={judge.value}>
+                        {judge.label}
+                        </option>
+                        ))}
                 </Form.Control>
                 <br />
                 <Form.Control size="lg" as="select" value={formset} onChange={onChangeFormset} className={'selectF'}>
-                    <option value="Форма судочинства">Форма судочинства</option>
-                    <option value="Адміністративні правопорушення">Адміністративні правопорушення</option>
-                    <option value="Кримінальне судочинство">Кримінальне судочинство</option>
-                    <option value="Цивільне судочинство">Цивільне судочинство</option>
+                    {options.map((option) => (
+                    <option key={option.value} value={option.value}>
+                        {option.label}
+                        </option>
+                        ))}
                 </Form.Control>
                 <br />
                 <Form.Control size="lg" type="date" name="dob" placeholder="Due date" value={dob}
