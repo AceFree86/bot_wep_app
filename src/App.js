@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { useTelegram } from './hooks/useTelegram';
 import Perechin from './components/Perechin/Perechin';
 import Uzhhorod from './components/Uzhhorod/Uzhhorod';
+import Appellate from './components/Appellate/Appellate';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route index element={<Perechin />}/>
           <Route path={'uzhhorod'} element={<Uzhhorod />}/>
+          <Route path={'appellate'} element={<Appellate />}/>
         </Routes>
     </div>
   );
