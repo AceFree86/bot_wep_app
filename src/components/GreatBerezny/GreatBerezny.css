@@ -13,6 +13,10 @@
     margin-top: 27px;
 }
 
-h6 {
-    color: var(--tg-theme-hint-color); 
+h6, h5 {
+    color: var(--tg-theme-link-color); 
 }
+
+.my-heading {
+    margin-bottom: -1.0rem;
+  }

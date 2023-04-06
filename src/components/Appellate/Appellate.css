@@ -3,15 +3,20 @@
     flex-direction: column;
     width: 100%;
     padding: 20px;
+    align-items: stretch;
+    background: var(--tg-theme-bg-color);
+    color: var(--tg-theme-text-color);
 }
 
-.input {
-    width: 100%;
+.selectF {
     padding: 10px;
-    margin-top: 15px;
+    margin-top: 27px;
 }
 
-.select {
-    padding: 10px;
-    margin-top: 15px;
+h6, h5 {
+    color: var(--tg-theme-link-color); 
 }
+
+.my-heading {
+    margin-bottom: -1.0rem;
+  }
