@@ -64,7 +64,7 @@ const Perechin = () => {
 
     return (
         <div className={"form"}>
-            <h5>Перечинський районний суд</h5>
+          
                 <Form.Control size="lg" as="select" value={court} onChange={onChangeCourt} className={'selectF'}>
                     {judges.map((judge) => 
                         (<option key={judge.value} value={judge.value}> {judge.label} </option>))}
