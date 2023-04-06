@@ -12,9 +12,9 @@ const Perechin = () => {
     const {tg} = useTelegram();
 
     const onSendData = useCallback(() => {
-        const data = { dob, input_text, formset, court }
+        const data = { dob, formset, court }
         tg.sendData(JSON.stringify(data));
-    }, [dob, input_text, formset, court ])
+    }, [dob, formset, court ])
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -42,7 +42,7 @@ const Perechin = () => {
         const value = e.target.value;
         setText(value);
         if (value.trim()) {
-            setDob('');
+            setDob(value)
         } else {
             setDob(new Date().toISOString().slice(0, 10));
         }
