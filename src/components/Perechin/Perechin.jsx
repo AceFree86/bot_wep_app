@@ -45,7 +45,7 @@ const Perechin = () => {
         if (value.trim()) {
             setDob(value)
         } else {
-            const formattedDate = strftime('%d.%m.%Y', new Date().toISOString().slice(0, 10));
+            const formattedDate = strftime('%d.%m.%Y', new Date());
             setDob(formattedDate);
         }
     }
