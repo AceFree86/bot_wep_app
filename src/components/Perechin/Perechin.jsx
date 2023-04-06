@@ -5,7 +5,8 @@ import { Form } from "react-bootstrap";
 
 
 const Perechin = () => {
-    const [dob, setDob] = useState(new Date().toISOString().slice(0, 10));
+    const formatter = new Intl.DateTimeFormat('uk-UA');
+    const [dob, setDob] = useState(formatter.format(new Date().toISOString().slice(0, 10)));
     const [input_text,  setText] = useState('');
     const [formset, setFormset] = useState('');
     const [court, setCourt] = useState('');
@@ -44,10 +45,7 @@ const Perechin = () => {
         if (value.trim()) {
             setDob(value)
         } else {
-            const d = new Date().toISOString().slice(0, 10);
-            const parts = d.split('-');
-            const formattedDate = `${parts[2]}.${parts[1]}.${parts[0]}`;
-            setDob(formattedDate);
+            setDob(formatter.format(new Date().toISOString().slice(0, 10)));
         }
     }
 
