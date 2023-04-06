@@ -1,18 +1,20 @@
-import React, {useCallback, useEffect, useState} from 'react';
 import './Perechin.css';
+import React, {useCallback, useEffect, useState} from 'react';
 import { useTelegram } from "../../hooks/useTelegram";
 import { Form } from "react-bootstrap";
 
+
 const Perechin = () => {
     const [dob, setDob] = useState(new Date().toISOString().slice(0, 10));
+    const [input_text,  setText] = useState('');
     const [formset, setFormset] = useState('');
     const [court, setCourt] = useState('');
     const {tg} = useTelegram();
 
     const onSendData = useCallback(() => {
-        const data = { dob, formset, court }
+        const data = { dob, input_text, formset, court }
         tg.sendData(JSON.stringify(data));
-    }, [dob, formset, court])
+    }, [dob, input_text, formset, court ])
 
     useEffect(() => {
         tg.onEvent('mainButtonClicked', onSendData)
@@ -32,6 +34,20 @@ const Perechin = () => {
         setCourt(e.target.value)
     }
 
+    const onDateCourt = (e) => {
+        setDob(e.target.value)
+    }
+
+    const onTextChange = (e) => {
+        const value = e.target.value;
+        setText(value);
+        if (value.trim()) {
+            setDob('');
+        } else {
+            setDob(new Date().toISOString().slice(0, 10));
+        }
+    }
+
     const options = [
         { value: 'Форма судочинства', label: 'Форма судочинства' },
         { value: 'Адміністративні правопорушення', label: 'Адміністративні правопорушення' },
@@ -48,25 +64,23 @@ const Perechin = () => {
 
     return (
         <div className={"form"}>
-            <h6>Перечинський районний суд</h6>
+            <h5>Перечинський районний суд</h5>
                 <Form.Control size="lg" as="select" value={court} onChange={onChangeCourt} className={'selectF'}>
-                    {judges.map((judge) => (
-                    <option key={judge.value} value={judge.value}>
-                        {judge.label}
-                        </option>
-                        ))}
-                </Form.Control>
-                <br />
-                <Form.Control size="lg" as="select" value={formset} onChange={onChangeFormset} className={'selectF'}>
-                    {options.map((option) => (
-                    <option key={option.value} value={option.value}>
-                        {option.label}
-                        </option>
-                        ))}
-                </Form.Control>
-                <br />
-                <Form.Control size="lg" type="date" name="dob" placeholder="Due date" value={dob}
-                 onChange={(e) => setDob(e.target.value)} className={'selectF'} />
+                    {judges.map((judge) => 
+                        (<option key={judge.value} value={judge.value}> {judge.label} </option>))}
+                    </Form.Control>
+
+                    <br />
+                    <Form.Control size="lg" as="select" value={formset} onChange={onChangeFormset} className={'selectF'}>
+                        {options.map((option) => 
+                            (<option key={option.value} value={option.value}>{option.label}</option>))}
+                        </Form.Control>
+
+                        <br />
+                        <Form.Control size="lg" type="date" name="dob" placeholder="Due date" value={dob} onChange={onDateCourt} disabled={input_text.trim()} className={'selectF'} />
+                    <br />
+                <h6 class={"my-heading"} >Пошук :</h6>
+            <Form.Control size="lg" type="text" placeholder="ПІП або номер справи" value={input_text} onChange={onTextChange} className={'selectF'} />
         </div>
     );
 };
