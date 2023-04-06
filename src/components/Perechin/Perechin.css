@@ -1,5 +1,4 @@
 .form {
-    position: fixed;
     bottom: 0;
     display: flex;
     flex-direction: column;
@@ -22,3 +21,20 @@ h6, h5 {
 .my-heading {
     margin-bottom: -1.0rem;
   }
+
+  #myInput {
+    z-index: 3; /* Set higher z-index for form1 */
+  }
+
+  #myDate {
+    z-index: 2; /* Set higher z-index for form1 */
+  }
+  
+  #myForms {
+    z-index: 1; /* Set lower z-index for form2 */
+  }
+  
+  #myJudge {
+    z-index: 0; /* Set lower z-index for form3 */
+  }
+  
