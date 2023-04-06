@@ -6,7 +6,7 @@ const strftime = require('strftime');
 
 
 const Perechin = () => {
-    const [dob, setDob] = useState(new Date().toISOString().slice(0, 10));
+    const [dob, setDob] = useState(new Date().toISOString().slice(0, 10).toLocaleString( 'uk-UA' ));
     const [input_text,  setText] = useState('');
     const [formset, setFormset] = useState('');
     const [court, setCourt] = useState('');
