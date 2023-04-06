@@ -2,6 +2,7 @@ import './Perechin.css';
 import React, {useCallback, useEffect, useState} from 'react';
 import { useTelegram } from "../../hooks/useTelegram";
 import { Form } from "react-bootstrap";
+const strftime = require('strftime');
 
 
 const Perechin = () => {
@@ -44,7 +45,8 @@ const Perechin = () => {
         if (value.trim()) {
             setDob(value)
         } else {
-            setDob(new Date().toISOString().slice(0, 10));
+            const formattedDate = strftime('%d.%m.%Y', new Date().toISOString().slice(0, 10));
+            setDob(formattedDate);
         }
     }
 
@@ -80,7 +82,8 @@ const Perechin = () => {
                         <Form.Control size="lg" type="date" name="dob" placeholder="Due date" value={dob} onChange={onDateCourt} disabled={input_text.trim()} className={'selectF'} />
                     <br />
                 <h6 class={"my-heading"} >Пошук :</h6>
-            <Form.Control size="lg" type="text" placeholder="ПІП або номер справи" value={input_text} onChange={onTextChange} className={'selectF'} />
+            <Form.Control size="lg" type="text" placeholder="ПІП або номер справи" value={input_text} onChange={onTextChange} id={'myInput'}
+             className={'selectF'} />
         </div>
     );
 };
