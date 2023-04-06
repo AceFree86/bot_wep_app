@@ -46,7 +46,7 @@ const Perechin = () => {
             setDob(value)
         } else {
             const d = new Date().toISOString().slice(0, 10);
-            setDob(d.toLocaleString( 'uk' ));
+            setDob(d.toLocaleString( 'uk-UA' ));
         }
     }
 
