@@ -10,12 +10,6 @@ import GreatBerezny from './components/GreatBerezny/GreatBerezny';
 
 
 function App() {
-  const {tg} = useTelegram();
-
-  useEffect(() => {
-    tg.ready();
-  }, [])
-
   return (
     <div className="App">
         <Routes>
