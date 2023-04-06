@@ -2,14 +2,10 @@ import './Perechin.css';
 import React, {useCallback, useEffect, useState} from 'react';
 import { useTelegram } from "../../hooks/useTelegram";
 import { Form } from "react-bootstrap";
-const strftime = require('strftime');
 
 
 const Perechin = () => {
-    const d = new Date().toISOString().slice(0, 10);
-    const parts = d.split('-');
-    const formattedDate = `${parts[2]}.${parts[1]}.${parts[0]}`;
-    const [dob, setDob] = useState(formattedDate);
+    const [dob, setDob] = useState(new Date().toISOString().slice(0, 10));
     const [input_text,  setText] = useState('');
     const [formset, setFormset] = useState('');
     const [court, setCourt] = useState('');
