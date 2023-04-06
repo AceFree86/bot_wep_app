@@ -77,9 +77,10 @@ const Perechin = () => {
                         </Form.Control>
 
                         <br />
+                        <h6 class={"my-heading"} >Пошук за датою :</h6>
                         <Form.Control size="lg" type="date" name="dob" placeholder="Due date" value={dob} onChange={onDateCourt} disabled={input_text.trim()} className={'selectF'} />
                     <br />
-                <h6 class={"my-heading"} >Пошук :</h6>
+                <h6 class={"my-heading"} >Пошук за ПІП або номер справи :</h6>
             <Form.Control size="lg" type="text" placeholder="ПІП або номер справи" value={input_text} onChange={onTextChange} id={'myInput'}
              className={'selectF'} />
         </div>
