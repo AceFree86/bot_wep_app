@@ -28,16 +28,6 @@ const Perechin = () => {
         window.scrollTo(0, document.body.scrollHeight);
     }, []);
 
-    useEffect(() => {
-      const handleKeyboard = () => {
-        if (!input_text.trim()) {
-             window.scrollTo(0, document.body.scrollHeight);
-        }
-      };
-      window.addEventListener("resize", handleKeyboard);
-      return () => window.removeEventListener("resize", handleKeyboard);
-    }, [input_text]);
-
 
     const onChangeFormset = (e) => {
         setFormset(e.target.value);
