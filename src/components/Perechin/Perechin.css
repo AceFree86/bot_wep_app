@@ -1,7 +1,5 @@
 .form {
     height: 100vh; /* Magic here */
-    justify-content: center;
-    position: absolute;
     padding: 20px;
     background: var(--tg-theme-secondary-bg-color);
     color: var(--tg-theme-text-color);
