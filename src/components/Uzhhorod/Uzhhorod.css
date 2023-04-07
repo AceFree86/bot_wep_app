@@ -1,24 +1,6 @@
 .form {
-    position: sticky;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    height: 100vh; /* Magic here */
     padding: 20px;
-    align-items: stretch;
-    background: var(--tg-theme-bg-color);
+    background: var(--tg-theme-secondary-bg-color);
     color: var(--tg-theme-text-color);
 }
-
-.selectF {
-    padding: 10px;
-    margin-top: 27px;
-}
-
-h6, h5 {
-    color: var(--tg-theme-link-color); 
-}
-
-.my-heading {
-    margin-bottom: -1.0rem;
-  }
