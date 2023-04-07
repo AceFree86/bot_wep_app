@@ -79,64 +79,61 @@ const Perechin = () => {
     ];
 
     return (
-        <div className={"form"}>
-            <h5>Перечинський районний суд</h5>
-            <Form.Control
-                size="lg"
-                as="select"
-                value={court}
-                onChange={onChangeCourt}
-                id={"myJudge"}
-                className={"selectF"}
-            >
-                {judges.map((judge) => (
-                    <option key={judge.value} value={judge.value}>
-                        {" "}
-                        {judge.label}{" "}
-                    </option>
-                ))}
-            </Form.Control>
-            <br />
-            <Form.Control
-                size="lg"
-                as="select"
-                value={formset}
-                onChange={onChangeFormset}
-                id={"myForms"}
-                className={"selectF"}
-            >
-                {options.map((option) => (
-                    <option key={option.value} value={option.value}>
-                        {option.label}
-                    </option>
-                ))}
-            </Form.Control>
-            <br />
-            <h6 class={"my-heading"}>Пошук за датою :</h6>
-            <Form.Control
-                size="lg"
-                type="date"
-                name="dob"
-                placeholder="Due date"
-                value={dob}
-                onChange={onDateCourt}
-                disabled={input_text.trim()}
-                id={"myDate"}
-                className={"selectF"}
-            />
-            <br />
-            <h6 class={"my-heading"}>Пошук за ПІП або номер справи :</h6>
-            <Form.Control
-                size="lg"
-                type="text"
-                placeholder="ПІП або номер справи"
-                value={input_text}
-                onChange={onTextChange}
-                id={"myInput"}
-                className={"selectF"}
-                autoComplete="off"
-            />
-        </div>
+      <Form>
+        <h5>Перечинський районний суд</h5>
+        <Form.Control
+          size="lg"
+          as="select"
+          value={court}
+          onChange={onChangeCourt}
+          id={"myJudge"}
+          className={"selectF"}
+        >
+          {judges.map((judge) => (
+            <option key={judge.value} value={judge.value}>
+              {" "}
+              {judge.label}{" "}
+            </option>
+          ))}
+        </Form.Control>
+        <Form.Control
+          size="lg"
+          as="select"
+          value={formset}
+          onChange={onChangeFormset}
+          id={"myForms"}
+          className={"selectF"}
+        >
+          {options.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </Form.Control>
+        <Form.Label>Пошук за датою :</Form.Label>
+        <Form.Control
+          size="lg"
+          type="date"
+          name="dob"
+          placeholder="Due date"
+          value={dob}
+          onChange={onDateCourt}
+          disabled={input_text.trim()}
+          id={"myDate"}
+          className={"selectF"}
+        />
+        <Form.Label>Пошук за ПІП або номер справи :</Form.Label>
+        <Form.Control
+          size="lg"
+          type="text"
+          placeholder="ПІП або номер справи"
+          value={input_text}
+          onChange={onTextChange}
+          id={"myInput"}
+          className={"selectF"}
+          autoComplete="off"
+        />
+      </Form>
     );
 };
 
