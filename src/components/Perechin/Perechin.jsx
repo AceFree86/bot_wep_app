@@ -24,6 +24,7 @@ const Perechin = () => {
     useEffect(() => {
         tg.MainButton.setParams({ text: 'Пошук' })
         tg.MainButton.show();
+        window.scrollTo(0, 1);
     }, [])
 
     const onChangeFormset = (e) => {
@@ -77,7 +78,7 @@ const Perechin = () => {
             <br />
             <h6 class={"my-heading"} >Пошук за датою :</h6>
             <Form.Control size="lg" type="date" name="dob" placeholder="Due date" value={dob} onChange={onDateCourt} disabled={input_text.trim()}
-                id={'myDate'} className={'selectF'} autoComplete="off" />
+                id={'myDate'} className={'selectF'} />
             <br />
             <h6 class={"my-heading"} >Пошук за ПІП або номер справи :</h6>
             <Form.Control size="lg" type="text" placeholder="ПІП або номер справи" value={input_text} onChange={onTextChange} id={'myInput'}
