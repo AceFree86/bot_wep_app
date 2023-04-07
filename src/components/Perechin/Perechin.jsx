@@ -110,7 +110,6 @@ const Perechin = () => {
                     </option>
                 ))}
             </Form.Control>
-            <h6 class={"my-heading"}>Пошук за датою :</h6>
             <Form.Control
                 size="lg"
                 type="date"
@@ -122,7 +121,6 @@ const Perechin = () => {
                 id={"myDate"}
                 className={"selectF"}
             />
-            <h6 class={"my-heading"}>Пошук за ПІП або номер справи :</h6>
             <Form.Control
                 size="lg"
                 type="text"
