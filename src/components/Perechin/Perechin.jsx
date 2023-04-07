@@ -28,6 +28,17 @@ const Perechin = () => {
         window.scrollTo(1, 0);
     }, []);
 
+    useEffect(() => {
+      const handleKeyboard = () => {
+        if (!input_text.trim()) {
+          window.scrollTo(1, 0);
+        }
+      };
+      window.addEventListener("resize", handleKeyboard);
+      return () => window.removeEventListener("resize", handleKeyboard);
+    }, [input_text]);
+
+
     const onChangeFormset = (e) => {
         setFormset(e.target.value);
     };
@@ -124,7 +135,6 @@ const Perechin = () => {
                 id={"myInput"}
                 className={"selectF"}
                 autoComplete="off"
-                autoFocus
             />
         </div>
     );
