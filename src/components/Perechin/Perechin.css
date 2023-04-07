@@ -3,6 +3,6 @@
     flex-direction: column;
     height: 100vh; /* Magic here */
     padding: 20px;
-    background: var(--tg-theme-bg-color);
+    background: var(--tg-theme-secondary-bg-color);
     color: var(--tg-theme-text-color);
 }
