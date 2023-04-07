@@ -31,6 +31,7 @@ const Perechin = () => {
     useEffect(() => {
       const handleKeyboard = () => {
         if (!input_text.trim()) {
+             window.scrollTo(0, document.body.scrollHeight);
         }
       };
       window.addEventListener("resize", handleKeyboard);
