@@ -1,8 +1,6 @@
 .form {
-    position: fixed;
+    position: absolute;
     bottom: 0;
-    left: 0;
-    right: 0;
     width: 100%;
     align-items: center;
     justify-content: flex-end;
