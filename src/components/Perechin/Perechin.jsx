@@ -31,7 +31,6 @@ const Perechin = () => {
     useEffect(() => {
       const handleKeyboard = () => {
         if (!input_text.trim()) {
-          window.scrollTo(1, 0);
         }
       };
       window.addEventListener("resize", handleKeyboard);
@@ -79,59 +78,56 @@ const Perechin = () => {
     ];
 
     return (
-        <div className={"form"}>
-            <h5>Перечинський районний суд</h5>
-            <Form.Control
-                size="lg"
-                as="select"
-                value={court}
-                onChange={onChangeCourt}
-                id={"myJudge"}
-                className={"selectF"}
-            >
-                {judges.map((judge) => (
-                    <option key={judge.value} value={judge.value}>
-                        {" "}
-                        {judge.label}{" "}
-                    </option>
-                ))}
-            </Form.Control>
-            <Form.Control
-                size="lg"
-                as="select"
-                value={formset}
-                onChange={onChangeFormset}
-                id={"myForms"}
-                className={"selectF"}
-            >
-                {options.map((option) => (
-                    <option key={option.value} value={option.value}>
-                        {option.label}
-                    </option>
-                ))}
-            </Form.Control>
-            <Form.Control
-                size="lg"
-                type="date"
-                name="dob"
-                placeholder="Due date"
-                value={dob}
-                onChange={onDateCourt}
-                disabled={input_text.trim()}
-                id={"myDate"}
-                className={"selectF"}
-            />
-            <Form.Control
-                size="lg"
-                type="text"
-                placeholder="ПІП або номер справи"
-                value={input_text}
-                onChange={onTextChange}
-                id={"myInput"}
-                className={"selectF"}
-                autoComplete="off"
-            />
-        </div>
+      <div className={"form"}>
+        <h5>Перечинський районний суд</h5>
+        <Form.Control
+          size="lg"
+          as="select"
+          value={court}
+          onChange={onChangeCourt}
+          id={"myJudge"}
+          className={"selectF"}
+        >
+          {judges.map((judge) => (
+            <option key={judge.value} value={judge.value}>
+              {" "}
+              {judge.label}{" "}
+            </option>
+          ))}
+        </Form.Control>
+        <Form.Control
+          size="lg"
+          as="select"
+          value={formset}
+          onChange={onChangeFormset}
+          className={"selectF"}
+        >
+          {options.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </Form.Control>
+        <Form.Control
+          size="lg"
+          type="date"
+          name="dob"
+          placeholder="Due date"
+          value={dob}
+          onChange={onDateCourt}
+          disabled={input_text.trim()}
+          className={"selectF"}
+        />
+        <Form.Control
+          size="lg"
+          type="text"
+          placeholder="ПІП або номер справи"
+          value={input_text}
+          onChange={onTextChange}
+          autoComplete="off"
+          className={"selectF"}
+        />
+      </div>
     );
 };
 
