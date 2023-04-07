@@ -25,7 +25,6 @@ const Perechin = () => {
     useEffect(() => {
         tg.MainButton.setParams({ text: "Пошук" });
         tg.MainButton.show();
-        window.scrollTo(0, document.body.scrollHeight);
     }, []);
 
 
