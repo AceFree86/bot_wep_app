@@ -6,11 +6,18 @@
 }
 
 body {
-  background: var(--tg-theme-bg-color);
+  background: var(--tg-theme-secondary-bg-color);
   color: var(--tg-theme-text-color);
 }
 
 .selectF {
     padding: 10px;
     margin-top: 27px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Magic here */
+    padding: 20px;
 }
