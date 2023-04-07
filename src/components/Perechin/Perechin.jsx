@@ -81,7 +81,7 @@ const Perechin = () => {
             <br />
             <h6 class={"my-heading"} >Пошук за ПІП або номер справи :</h6>
             <Form.Control size="lg" type="text" placeholder="ПІП або номер справи" value={input_text} onChange={onTextChange} id={'myInput'}
-                className={'selectF'} autoComplete="off" />
+                className={'selectF'} autoComplete="off" autoFocus />
         </div>
 
     );
