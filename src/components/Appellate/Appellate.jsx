@@ -79,13 +79,11 @@ const Appellate = () => {
                     {judges.map((judge) => 
                         (<option key={judge.value} value={judge.value}> {judge.label} </option>))}
                     </Form.Control>
-
                     <br />
                     <Form.Control size="lg" as="select" value={formset} onChange={onChangeFormset} className={'selectF'}>
                         {options.map((option) => 
                             (<option key={option.value} value={option.value}>{option.label}</option>))}
                         </Form.Control>
-
                         <br />
                         <Form.Control size="lg" type="date" name="dob" placeholder="Due date" value={dob} onChange={onDateCourt} disabled={input_text.trim()} className={'selectF'} />
                     <br />
