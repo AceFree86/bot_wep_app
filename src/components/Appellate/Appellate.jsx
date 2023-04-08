@@ -80,7 +80,8 @@ const Appellate = () => {
   return (
     <div className={"form"}>
       <h5>Закарпатський апеляційний суд</h5>
-      <Form.Control
+      <Form.Select
+        aria-label="Floating label select example"
         size="lg"
         as="select"
         value={court}
@@ -93,8 +94,9 @@ const Appellate = () => {
             {judge.label}{" "}
           </option>
         ))}
-      </Form.Control>
-      <Form.Control
+      </Form.Select>
+      <Form.Select
+        aria-label="Floating label select example"
         size="lg"
         as="select"
         value={formset}
@@ -106,7 +108,7 @@ const Appellate = () => {
             {option.label}
           </option>
         ))}
-      </Form.Control>
+      </Form.Select>
       <Form.Control
         size="lg"
         type="date"

@@ -70,7 +70,8 @@ const Perechin = () => {
     return (
       <div className={"form"}>
         <h5>Перечинський районний суд</h5>
-        <Form.Control
+        <Form.Select
+          aria-label="Floating label select example"
           size="lg"
           as="select"
           value={court}
@@ -83,8 +84,9 @@ const Perechin = () => {
               {judge.label}{" "}
             </option>
           ))}
-        </Form.Control>
-        <Form.Select aria-label="Floating label select example"
+        </Form.Select>
+        <Form.Select
+          aria-label="Floating label select example"
           size="lg"
           as="select"
           value={formset}

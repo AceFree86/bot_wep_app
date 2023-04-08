@@ -89,7 +89,8 @@ const Uzhhorod = () => {
   return (
     <div className={"form"}>
       <h5>Ужгородський міськрайонний суд</h5>
-      <Form.Control
+      <Form.Select
+        aria-label="Floating label select example"
         size="lg"
         as="select"
         value={court}
@@ -102,8 +103,9 @@ const Uzhhorod = () => {
             {judge.label}{" "}
           </option>
         ))}
-      </Form.Control>
-      <Form.Control
+      </Form.Select>
+      <Form.Select
+        aria-label="Floating label select example"
         size="lg"
         as="select"
         value={formset}
@@ -115,7 +117,7 @@ const Uzhhorod = () => {
             {option.label}
           </option>
         ))}
-      </Form.Control>
+      </Form.Select>
       <Form.Control
         size="lg"
         type="date"
