@@ -20,7 +20,6 @@ body {
 .form {
     display: flex;
     flex-direction: column;
-    height: 100vh; /* Magic here */
     width: 100%;
     padding: 20px;
     color: var(--tg-theme-link-color);
