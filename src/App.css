@@ -13,7 +13,10 @@ body {
 }
 
 .selectF {
-    margin-top: 27px;
+  -webkit-appearance: none; /* Remove default styling */
+  -moz-appearance: none;
+  appearance: none;
+  margin-top: 27px;
 }
 
 .form {
