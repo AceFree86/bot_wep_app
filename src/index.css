@@ -1,11 +1,6 @@
-* {
-  background: var(--tg-theme-bg-color);
-  color: var(--tg-theme-text-color);
-}
+
 
 body {
-  display: block;
-  position: relative;
   background: var(--tg-theme-bg-color);
   color: var(--tg-theme-text-color);
 }

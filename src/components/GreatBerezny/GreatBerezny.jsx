@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useState } from "react";
-import "./GreatBerezny.css";
 import { useTelegram } from "../../hooks/useTelegram";
 import { Form } from "react-bootstrap";
 

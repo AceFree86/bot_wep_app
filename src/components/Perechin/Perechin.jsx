@@ -1,4 +1,3 @@
-import "./Perechin.css";
 import React, { useCallback, useEffect, useState } from "react";
 import { useTelegram } from "../../hooks/useTelegram";
 import { Form } from "react-bootstrap";
