@@ -22,8 +22,9 @@ const Perechin = () => {
     }, [onSendData]);
 
     useEffect(() => {
-        tg.MainButton.setParams({ text: "Пошук" });
-        tg.MainButton.show();
+      tg.expand();
+      tg.MainButton.setParams({ text: "Пошук" });
+      tg.MainButton.show();
     }, []);
 
 

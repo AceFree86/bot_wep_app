@@ -1,6 +1,5 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "bootstrap/dist/js/bootstrap.bundle.min";
 import { Route, Routes } from 'react-router-dom';
 import Perechin from './components/Perechin/Perechin';
 import Uzhhorod from './components/Uzhhorod/Uzhhorod';
