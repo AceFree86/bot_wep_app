@@ -7,9 +7,13 @@ const Register = () => {
   const { tg } = useTelegram();
 
   const onSendData = useCallback(() => {
-    const data = { input_text };
+    const data = {
+      input_text,
+      user_id: tg.initData?.user?.id,
+      username: tg.initData?.user?.username,
+    };
     tg.sendData(JSON.stringify(data));
-  }, [input_text]);
+  }, [input_text, tg.initData]);
 
   useEffect(() => {
     tg.onEvent("mainButtonClicked", onSendData);
@@ -32,7 +36,7 @@ const Register = () => {
     } else {
       tg.MainButton.enable();
     }
-  }, [input_text]);
+  }, [input_text, tg.initData]);
 
 
   const onTextChange = (e) => {
