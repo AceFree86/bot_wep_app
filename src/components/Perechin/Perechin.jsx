@@ -75,7 +75,7 @@ const Perechin = () => {
           as="select"
           value={court}
           onChange={onChangeCourt}
-          id={"myJudge"}
+          id={"form_control"}
           className={"selectF"}
         >
           {judges.map((judge) => (

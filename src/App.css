@@ -12,13 +12,11 @@ body {
   top: 0;
 }
 
+#form_control{
+    background: var(--tg-theme-bg-color);
+}
+
 .selectF {
-  -webkit-appearance: none; /* Remove default styling */
-  -moz-appearance: none;
-  appearance: none;
-  background-repeat: no-repeat;
-  background-position: center right;
-  padding-right: 25px;
   margin-top: 27px;
 }
 
