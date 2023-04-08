@@ -75,7 +75,6 @@ const Perechin = () => {
           as="select"
           value={court}
           onChange={onChangeCourt}
-          id={"form_control"}
           className={"selectF"}
         >
           {judges.map((judge) => (
@@ -111,10 +110,9 @@ const Perechin = () => {
         <Form.Control
           size="lg"
           type="text"
-          placeholder="ПІП або номер справи"
+          placeholder="Пошук за ПІП або номер справи"
           value={input_text}
           onChange={onTextChange}
-          autoComplete="off"
           className={"selectF"}
         />
       </div>

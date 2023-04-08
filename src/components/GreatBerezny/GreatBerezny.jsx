@@ -112,7 +112,7 @@ const GreatBerezny = () => {
       <Form.Control
         size="lg"
         type="text"
-        placeholder="ПІП або номер справи"
+        placeholder="Пошук за ПІП або номер справи"
         value={input_text}
         onChange={onTextChange}
         autoComplete="off"

@@ -12,19 +12,15 @@ body {
   top: 0;
 }
 
-#form_control{
-    background: var(--tg-theme-bg-color);
-}
-
 .selectF {
   margin-top: 27px;
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    padding: 20px;
-    color: var(--tg-theme-link-color);
-    background: var(--tg-theme-bg-color);
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 20px;
+  color: var(--tg-theme-link-color);
+  background: var(--tg-theme-bg-color);
 }
