@@ -8,10 +8,13 @@ const Register = () => {
 
   const onSendData = useCallback(() => {
     const data = {
-      input_text
+      input_text,
+      user_id: tg.initDataUnsafe?.user?.id,
+      username: tg.initDataUnsafe?.user?.username,
     };
     tg.sendData(JSON.stringify(data));
-  }, [input_text]);
+  }, [input_text, tg.initData]);
+
 
   useEffect(() => {
     tg.onEvent("mainButtonClicked", onSendData);
