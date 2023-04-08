@@ -1,7 +1,5 @@
 
 .App {
-  display: block;
-  position: relative;
   text-align: center;
 }
 
@@ -11,15 +9,14 @@ body {
 }
 
 .selectF {
-    padding: 10px;
     margin-top: 27px;
 }
 
 .form {
     display: flex;
     flex-direction: column;
-    height: 100vh; /* Magic here */
+   
     padding: 20px;
-     color: var(--tg-theme-link-color);
+    color: var(--tg-theme-link-color);
     background: var(--tg-theme-bg-color);
 }
