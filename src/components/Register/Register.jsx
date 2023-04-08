@@ -17,8 +17,6 @@ const Register = () => {
 
   useEffect(() => {
     tg.onEvent("mainButtonClicked", onSendData);
-    console.log(tg.initData?.user?.id);
-    console.log(tg.initData?.user?.username);
     return () => {
       tg.offEvent("mainButtonClicked", onSendData);
     };
@@ -29,15 +27,6 @@ const Register = () => {
     tg.MainButton.setParams({ text: "Записати" });
     tg.MainButton.show();
   }, []);
-
-  useEffect(() => {
-    if (!input_text) {
-      tg.MainButton.disable();
-    } else {
-      tg.MainButton.enable();
-    }
-  }, [input_text, tg.initData]);
-
 
   const onTextChange = (e) => {
     const value = e.target.value;
