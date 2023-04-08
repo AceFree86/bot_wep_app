@@ -18,6 +18,8 @@ const Register = () => {
 
   useEffect(() => {
     tg.onEvent("mainButtonClicked", onSendData);
+    console.log(tg.initDataUnsafe?.user?.id);
+    console.log(tg.initDataUnsafe?.user?.username);
     return () => {
       tg.offEvent("mainButtonClicked", onSendData);
     };
