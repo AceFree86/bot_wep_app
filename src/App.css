@@ -20,4 +20,6 @@ body {
     flex-direction: column;
     height: 100vh; /* Magic here */
     padding: 20px;
+     color: var(--tg-theme-link-color);
+    background: var(--tg-theme-bg-color);
 }

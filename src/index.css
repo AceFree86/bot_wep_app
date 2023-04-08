@@ -6,7 +6,6 @@
 body {
   display: block;
   position: relative;
-  overflow: hidden;
   background: var(--tg-theme-bg-color);
   color: var(--tg-theme-text-color);
 }
