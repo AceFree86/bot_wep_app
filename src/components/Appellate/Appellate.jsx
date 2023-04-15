@@ -22,7 +22,6 @@ const Appellate = () => {
   }, [onSendData]);
 
   useEffect(() => {
-    tg.expand();
     tg.MainButton.setParams({ text: "Пошук" });
     tg.MainButton.show();
   }, []);
