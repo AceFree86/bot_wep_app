@@ -13,7 +13,6 @@ function App() {
 
   useEffect(() => {
     tg.expand();
-    tg.ready();
   }, []);
 
   return (
